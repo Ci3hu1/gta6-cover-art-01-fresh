@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Afterglow Vice Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">★</span>
+    <div>
+      <h1>AFTERGLOW <em>VICE</em></h1>
+      <p>Cover Studio — turn any photo into GTA-style cover art, offline.</p>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="undo" type="button">↩ Undo</button>
+    <button id="redo" type="button">↪ Redo</button>
+    <button id="reset" type="button">Reset</button>
+  </div>
+</header>
+<main class="studio">
+  <aside class="rail" aria-label="Photo frames">
+    <h2>Frames</h2>
+    <div id="rail"></div>
+    <label class="upload">Load your photo
+      <input id="upload" type="file" accept="image/*">
+    </label>
+    <p class="hint">Your photo replaces the selected frame. Drag the cover to reframe it, scroll to zoom.</p>
+  </aside>
+  <section class="stage">
+    <canvas id="preview" width="800" height="1000" aria-label="The cover preview"></canvas>
+    <p id="status" role="status">Pick a frame, a layout and a grade — then export.</p>
+  </section>
+  <aside class="inspector" aria-label="Cover controls">
+    <h2>Layout</h2>
+    <div id="layouts" class="pick-row"></div>
+    <h2>Grade</h2>
+    <div id="grades" class="swatch-row"></div>
+    <h2>Headline</h2>
+    <input id="headline" type="text" maxlength="32" value="GOLDEN GETAWAY">
+    <h2>Cast</h2>
+    <div id="cast" class="cast-inputs"></div>
+    <h2>Zoom</h2>
+    <input id="zoom" type="range" min="1" max="2.5" step="0.05" value="1">
+    <h2>Export PNG</h2>
+    <div class="export-row">
+      <button id="export-portrait" type="button">Portrait 1080×1350</button>
+      <button id="export-square" type="button">Square 1080×1080</button>
+      <button id="export-landscape" type="button">Landscape 1920×1080</button>
+    </div>
+  </aside>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
